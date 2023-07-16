@@ -2,6 +2,7 @@ package io.pastebin.keygenerationservices.controller;
 
 import io.pastebin.keygenerationservices.services.KeyInfoService;
 import jakarta.servlet.http.HttpServletRequest;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,14 +17,14 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1")
+@Slf4j
 public class KeyGenController {
     @Autowired
     KeyInfoService keyInfoService;
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(KeyGenController.class);
-
     @GetMapping()
     public String test() {
+        log.info("app test successful");
         return "Application up and running";
     }
 
